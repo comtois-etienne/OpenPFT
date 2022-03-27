@@ -4,6 +4,7 @@ import { IProps, IDropdownState, IData } from '../../../classes/PropsInterface'
 import { IParameter } from '../../../classes/PropsInterface'
 import unitsImport from '../../../data/units'
 import dataTypes from '../../../data/dataTypes'
+import { v4 } from 'uuid'
 import '../../../App.css'
 
 function ModalParameter({ data }: IProps<IData>) {
@@ -29,7 +30,7 @@ function ModalParameter({ data }: IProps<IData>) {
       setUnit("Select parameter type")
       setParam("")
       setIdentifier("")
-      setPft_Uid('00000000000000000000000000')
+      setPft_Uid(v4())
    }
 
    const handleSave = (d) => {

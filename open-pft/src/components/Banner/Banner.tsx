@@ -1,11 +1,13 @@
+import {useContext} from 'react';
 import { Navbar } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IProps, IData } from '../../classes/PropsInterface'
+import { DataContext } from '../../classes/PropsInterface'
 import MenuButtons from './MenuButtons';
 import ModalSelector from './ModalSelector';
 import './../../App.css'
 
-function Banner({ data }: IProps<IData>) {
+function Banner() {
+   const { data } = useContext(DataContext);
+
    return (
       <div className='bg-dark px-4 p-3 d-flex flex-content-between'>
          <div>

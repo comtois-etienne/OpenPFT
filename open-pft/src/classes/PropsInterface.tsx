@@ -1,3 +1,6 @@
+import { createContext } from "react"
+import { IGuidGenerator } from "./Guid"
+
 export interface IProps<T> {
    data: T
 }
@@ -43,5 +46,26 @@ export interface IDropdownState {
    value: string,
    setValue: React.Dispatch<React.SetStateAction<string>>,
    values: string[]
-
 }
+
+export interface IDataContext {
+   data: IData
+}
+
+export const DataContext = createContext<IDataContext>({
+   data: {
+      radio: {
+         value: '',
+         setValue: () => '',
+      },
+      dataTypes: []
+   }
+});
+
+export const PageLinks = {
+   RoomUrl: '/api/room'
+}
+
+export const GuidGenerator = createContext<IGuidGenerator>({
+   generate: () => ''
+});
